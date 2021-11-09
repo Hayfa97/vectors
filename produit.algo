@@ -1,0 +1,80 @@
+PROCEDURE dot_product(v1,v2: ARRAY_OF INTEGER[3];)
+VAR
+   i,j,ps:INTEGER 
+    
+BEGIN
+  FOR i FROM 0 TO 2   DO
+      read(v1[i])
+  END_FOR
+  FOR j FROM 0 TO 2  DO
+      read(v2[j])
+  END_FOR
+  ps=(v1[0]*v2[0])+(v1[1]*v2[1])+(v1[2]*v2[2])
+    write ("the scalar of",v1,"and",v2,"is:",ps) 
+END
+
+
+
+ALGORITHM Dot produit
+VAR
+ v2,v1:ARRAY_OF INTEGER
+  n:INTEGER  
+  ps=0
+
+BEGIN
+write("donner le nombre des pairs")
+read(n)
+WHILE (k<n) DO
+    write("donner le 1er vecteur de k pairs")
+    read(v1)
+    write("donner le 2éme vecteur de k pairs")
+    read(v2)
+    dot_product(var v1,v2: ARRAY_OF INTEGER[])
+END_WHILE
+ FOR k FROM 0 TO n-1   DO
+     IF (ps=0) THEN
+         write("these 2 vectors are orthogonal")
+     END_IF
+ END_FOR 
+ 
+END
+
+
+FUNCTION dot_product1(v1,v2: ARRAY_OF INTEGER[3]) :INTEGER
+VAR
+   i,j,ps:INTEGER 
+    
+BEGIN
+  FOR i FROM 0 TO 2   DO
+      read(v1[i])
+  END_FOR
+  FOR j FROM 0 TO 2  DO
+      read(v2[j])
+  END_FOR
+  ps=(v1[0]*v2[0])+(v1[1]*v2[1])+(v1[2]*v2[2])
+    return ps
+END
+
+
+ALGORITHM Dot produit1
+VAR
+  n:INTEGER  
+  ps:INTEGER
+
+BEGIN
+write("donner le nombre des pairs")
+read(n)
+WHILE (k<n) DO
+    write("donner le 1er vecteur de k pairs")
+    read(v1)
+    write("donner le 2éme vecteur de k pairs")
+    read(v2)
+    ps=dot_product1( v1,v2: ARRAY_OF INTEGER[])
+END_WHILE
+ FOR k FROM 0 TO n-1  DO
+     IF (ps=0) THEN
+         write("these 2 vectors are orthogonal")
+     END_IF
+ END_FOR 
+ 
+END
